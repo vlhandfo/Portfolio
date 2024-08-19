@@ -1,0 +1,99 @@
+---
+title: "Curriculum Vitae"
+author: Victoria Handford
+about:
+  template: marquee
+---
+::: {.callout-note}
+This page contains a more detailed overview of my education, work experience, and skills. For a more personal introduction, click [here](about.qmd) or go to the "About" section.
+:::
+## Education
+
+### MSc Informatics: Language Technology
+**University of Oslo, Norway**  
+*August 2023 - anticipated June 2025*
+
+### BSc Informatics: Language Technology
+**University of Oslo, Norway**  
+*August 2020 - June 2023*
+
+### BA Music and German
+**University of Nebraska - Lincoln, USA**  
+*August 2015 - June 2019*
+
+## Work Experience
+
+### Data Scientist, Summer Intern  
+**NAV IT**  
+*June 2024- August 2024*
+
+* Worked as an *"NLP Guru"* in an interdisciplinary team to develop a retrieval-based chatbot to answer questions about the Norwegian pension system.
+* Implemented a full stack application where my primary focus with the backend and data pipelines. 
+* Processed and structured raw data to be used as the knowledge-base
+* Explored possible no-code/low-code solutions
+
+### Teaching Assistant
+**University of Oslo**
+*From August 2022*  
+
+* Multiple different assistantships in a variety of subjects  
+	* IN1000 - Introduction to Object-Oriented Programming  
+	* IN1140 - Introduction to Language Technology  
+	* IN4080 - Natural Language Processing  
+* Held seminars and answered questions from students
+* Graded obligatory assignments and provided helpful feedback
+
+::: {.callout-tip }
+## Additional TA Projects
+
+During my time at UiO, I have worked on a variety of projects alongside being a teaching assistant, including but not limited to administrative roles, resource development, and student representation for hiring new professors. Check them out [here](/projects.qmd) or in the "Projects" section!
+:::
+
+## Certifications and Exams
+
+### Natural Language Processing Specialization
+**Coursera**  
+*July 2023*  
+Specialization in NLP with classification and vector spaces, probabilistic models, sequence models, and attention models.
+
+### Bergenstest
+**Folkeuniversitet**  
+*January 2020*  
+Examination for Norwegian at an advanced level, needed to study at a Norwegian institute. This exam was replaced by the Norwegian Test C1 - higher academic level in 2022.
+
+## Technical Skills
+
+I have rated the following languages according to how comfortable I am with each from *Basic* to *Proficient*:
+
+| Language | Level        |
+|----------|--------------|
+| Python   | Proficient   |
+| Markdown | Proficient   |
+| Java     | Intermediate | 
+| HTML	   | Intermediate | 
+| Bash     | Basic (+)    |
+
+Additionally, I have limited experience with R, SQL, Kotlin, JavaScript, and TypeScript.
+
+### Python Frameworks
+
+* Natural Language Processing and Machine Learning:  
+	* Transformers from HuggingFace  
+	* Pytorch  
+	* SciKitLearn  
+	* Natural Language Tool Kit (NLTK)  
+	* RegEx  
+* Data Science and Visualization:  
+	* Pandas   
+	* MatplotLib   
+	* Jupyter Notebooks    
+	* Quarto  
+	* Bootstrap
+	* Seaborn    
+	* Altair  
+* Additional  
+	* NumPy  
+	* Beautiful Soup  
+	* FastAPI  
+	* FastHTML  
+

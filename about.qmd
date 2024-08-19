@@ -1,5 +1,22 @@
 ---
-title: "About"
+title: Victoria Handford
+image: images/headshot_vh.jpeg
+about:
+  template: trestles
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+    - icon: file-earmark-person-fill
+      text: Full CV
+      href: cv.qmd
 ---
 
-About this site
+I am a creative and curious individual with a strong passion for learning through hands-on experience. With expertise in Natural Language Processing (NLP), I thrive when solving complex problems and tackling puzzles, always seeking innovative solutions. My work is deeply rooted in my ethical values, and I prioritize integrity and responsible practices in every project I undertake. 
+
+## Education
+I am currently finishing my Master's in Informatics: Language Technology at the University of Oslo after having completed the Bachelor's program. My thesis focuses on linguistic representativeness of large language models from a typological perspective. Additionally, I have a Bachelor's degree in Music and German from the University of Nebraska-Lincoln.
+
+## 
