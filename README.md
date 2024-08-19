@@ -1,2 +1,3 @@
-# portfolio
-Portfolio containing CV and side projects
+# Victoria Handford
+
+My portfolio containing CV and side projects
