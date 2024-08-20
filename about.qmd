@@ -8,7 +8,7 @@ about:
   links:
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/vlhandfo
     - icon: file-earmark-person-fill
       text: Full CV
       href: cv.qmd

@@ -4,6 +4,9 @@ author: Victoria Handford
 about:
   template: marquee
 ---
+
+[PDF Resume](vh-resume.pdf)
+
 ::: {.callout-note}
 This page contains a more detailed overview of my education, work experience, and skills. For a more personal introduction, click [here](about.qmd) or go to the "About" section.
 :::
@@ -12,14 +15,18 @@ This page contains a more detailed overview of my education, work experience, an
 ### MSc Informatics: Language Technology
 **University of Oslo, Norway**  
 *August 2023 - anticipated June 2025*
+Full-time Master’s program focusing on natural language processing (NLP), evaluation of large language models (LLMs), data science, statistics, and programming.
 
 ### BSc Informatics: Language Technology
 **University of Oslo, Norway**  
 *August 2020 - June 2023*
 
+Full-time Bachelor’s program covering a variety of subjects including, but not limited to, computer science and programming, natural language processing (NLP), machine learning and artificial intelligence, linguistics, and English.
+
 ### BA Music and German
 **University of Nebraska - Lincoln, USA**  
 *August 2015 - June 2019*
+Full-time Bachelor’s program with a double major in classical voice andGerman language and literature.
 
 ## Work Experience
 
