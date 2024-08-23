@@ -1,0 +1,31 @@
+{
+  trip(
+    from: {
+      place:"{start_id}"
+			name:"{start_name}" 
+    }
+    to: {
+      place:"{end_id}"
+      name:"{end_name}"
+    }
+    numTripPatterns: {n}
+    dateTime: "{datetime}"
+    walkSpeed: 1.3
+    arriveBy: false
+  )
+  {
+    tripPatterns {
+      expectedStartTime
+      duration
+      walkDistance
+      legs {
+        mode
+        distance
+        line {
+          id
+          publicCode
+        }
+      }
+    }
+  }
+}
