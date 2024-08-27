@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-def get_stop_dataframe(dir: str | Path) -> pd.DataFrame:
+def get_stop_dataframe(dir: str) -> pd.DataFrame:
 	"""
 	Reads stop information from `{dir}/data/stops.csv`, adds simple keys for 
 	informal stop names and returns everything in a pd.Dataframe.

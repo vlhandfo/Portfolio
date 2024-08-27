@@ -6,9 +6,18 @@ format:
     code-fold: false
 jupyter: python3
 ---
-This project is the base for a dashboard assistant with information about travel.
+The base of a personal dashboard assistant with information about travel
 
-## Row {height=70%}
+::: {.callout-note}
+This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github.
+:::
+<!-- ![bus-icon](/images/public-transit.svg) -->
+
+<img src="/images/public-transit.svg" alt="bus-icon" class="center">
+
+## Basic Travel Functionality
+
+This is an example of using the API from Entur to generate three routes from Lillestrøm stasjon to Forskningsparken. For this sample, I have simply printed out the formatted GraphQL query used and the formatted result from the response.
 
 ```{python}
 #| eval: true

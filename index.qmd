@@ -6,6 +6,3 @@ title: "Victoria Handford"
 
 <h5 style="text-align: center; padding: 30px;"><b>"For the things we have to learn before we can do them, we learn by doing them."</b><br><i>– Aristotle </i></h5>
 
-::: {.callout-important}
-This website is still under construction.
-:::

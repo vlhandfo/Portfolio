@@ -80,7 +80,7 @@ I have rated the following languages according to how comfortable I am with each
 | HTML	   | Intermediate | 
 | Bash     | Basic (+)    |
 
-Additionally, I have limited experience with R, SQL, Kotlin, JavaScript, and TypeScript.
+Additionally, I have limited experience with R, SQL, Docker/Kubernetes, Kotlin, JavaScript, and TypeScript.
 
 ### Python Frameworks
 

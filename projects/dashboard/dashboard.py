@@ -45,6 +45,9 @@ def main(args) -> None:
   
 	print("From Lillestrøm stasjon to Forskningsparken:")
 	print("============================================")
+	print("QUERY:")
+	print(query_body, "\n")
+	print("RESULT:")
 	print(trip)
 	
 if __name__ == "__main__":

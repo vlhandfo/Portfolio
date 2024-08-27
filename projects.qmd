@@ -1,2 +1,13 @@
+---
+title: Projects
+listing: 
+  contents: 
+    - "projects/dashboard/*.qmd"
+  sort: "data"
+#  categories: True
+#   include:
+#     category: Data Science
+
+---
 
 ![OBS: I'm a work in progess.](images/work-in-progress.gif)

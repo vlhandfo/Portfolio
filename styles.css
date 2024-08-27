@@ -1,1 +1,11 @@
 /* css styles */
+.grid-container {
+	display: inline-grid;
+  }
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
