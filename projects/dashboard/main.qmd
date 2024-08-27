@@ -1,0 +1,48 @@
+--- 
+title: "Travel Board"
+category: Development
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+This project is the base for a dashboard assistant with information about travel.
+
+## Row {height=70%}
+
+```{python}
+#| eval: true
+
+from dashboard import main
+from pathlib import Path
+
+args = lambda: None
+args.URL = "https://api.entur.io/journey-planner/v3/graphql"
+args.DIR = Path("")
+args.TEMPLATE_DIR = Path("query_templates/")
+
+assert args.DIR.exists(), "No data directory found"
+assert args.TEMPLATE_DIR.exists(), "No template directory found"
+
+main(args)
+
+```
+
+## Interactive Version (Incomplete) 
+<div class="grid-container">
+<label for="depature">Departure:</label>
+<select name="departure" id="departure">
+  <option value="" selected disabled hidden>Choose here</option>
+  <option value="Lillestrøm stasjon">Lillestrøm stasjon</option>
+  <option value="Oslo S">Oslo S</option>
+  <option value="Forskningsparken">Forskningsparken</option>
+</select>
+<label for="destination">Destination: </label>
+<select name="destination" id="destination">
+  <option value="" selected disabled hidden>Choose here</option>
+  <option value="Lillestrøm stasjon">Lillestrøm stasjon</option>
+  <option value="Oslo S">Oslo S</option>
+  <option value="Forskningsparken">Forskningsparken</option>
+</select>
+<button type="button" onclick="">Submit</button> 
+</div>
