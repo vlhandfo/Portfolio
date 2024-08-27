@@ -21,6 +21,10 @@ website:
         text: CV
       - href: projects.qmd
         text: Projects
+    right:
+      - icon: github
+        href: https://github.com/vlhandfo
+        aria-label: GitHub
 
 
 format:

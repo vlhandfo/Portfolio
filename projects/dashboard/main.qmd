@@ -9,7 +9,7 @@ jupyter: python3
 The base of a personal dashboard assistant with information about travel
 
 ::: {.callout-note}
-This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github.
+This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github [here](https://github.com/vlhandfo/portfolio/tree/main/projects/dashboard).
 :::
 <!-- ![bus-icon](/images/public-transit.svg) -->
 
