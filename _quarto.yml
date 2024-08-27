@@ -5,6 +5,12 @@ project:
 website:
   title: "Victoria Handford"
   favicon: stars
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "This website is still under construction."
+    type: primary
+    position: below-navbar
   navbar:
     left:
       - href: index.qmd
