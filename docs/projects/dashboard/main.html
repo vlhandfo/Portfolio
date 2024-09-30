@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.15">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-43e429913127d57dcc71ffbe9670d040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,6 +140,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/vlhandfo"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -196,7 +203,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github.</p>
+<p>This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github <a href="https://github.com/vlhandfo/portfolio/tree/main/projects/dashboard">here</a>.</p>
 </div>
 </div>
 <!-- ![bus-icon](/images/public-transit.svg) -->
@@ -204,7 +211,7 @@ Note
 <section id="basic-travel-functionality" class="level2">
 <h2 class="anchored" data-anchor-id="basic-travel-functionality">Basic Travel Functionality</h2>
 <p>This is an example of using the API from Entur to generate three routes from Lillestrøm stasjon to Forskningsparken. For this sample, I have simply printed out the formatted GraphQL query used and the formatted result from the response.</p>
-<div id="440ba2b8" class="cell" data-execution_count="1">
+<div id="2c6aae60" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dashboard <span class="im">import</span> main</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -232,7 +239,7 @@ QUERY:
       name:"Forskningsparken, Oslo"
     }
     numTripPatterns: 3
-    dateTime: "2024-08-27T16:38:33.312458+02:00"
+    dateTime: "2024-09-30T09:46:53.500779+02:00"
     walkSpeed: 1.3
     arriveBy: false
   )
@@ -255,31 +262,31 @@ QUERY:
 
 RESULT:
 Trip 1:
-Leave by: 2024-08-27 16:39:24+02:00
-Duration: 1502
-Walking: 369.76
-Legs: [
-    Mode: rail, Line: RE10, 
-    Mode: foot, 
-    Mode: metro, Line: 5]
-
-Trip 2:
-Leave by: 2024-08-27 16:47:51+02:00
-Duration: 1612
+Leave by: 2024-09-30 09:47:51+02:00
+Duration: 1578
 Walking: 352.84
 Legs: [
     Mode: rail, Line: R14, 
     Mode: foot, 
     Mode: metro, Line: 5]
 
-Trip 3:
-Leave by: 2024-08-27 16:56:00+02:00
+Trip 2:
+Leave by: 2024-09-30 09:56:00+02:00
 Duration: 1680
 Walking: 352.84
 Legs: [
     Mode: rail, Line: R12, 
     Mode: foot, 
     Mode: metro, Line: 4]
+
+Trip 3:
+Leave by: 2024-09-30 10:06:00+02:00
+Duration: 1620
+Walking: 352.84
+Legs: [
+    Mode: rail, Line: R13, 
+    Mode: foot, 
+    Mode: metro, Line: 5]
 
 </code></pre>
 </div>

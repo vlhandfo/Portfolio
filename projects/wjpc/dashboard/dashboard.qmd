@@ -1,0 +1,67 @@
+---
+title: "World Jigsaw Puzzle Championships 2024 Results"
+format: 
+  dashboard:
+    orientation: columns
+    theme: lux
+---
+
+# Home
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+from itables import show
+
+from result_stats import ResultStats
+
+df = pd.read_csv("data/wjpc_2024_individual_final.csv", 
+                 index_col=0
+                )
+
+df = df.rename(columns={"#": "Place"})
+df = df.set_index('Place')
+df = df[['Name', 'Time', 'Country', 'Origin']]
+res = ResultStats(df)
+```
+
+## Column - Overview {width=40%}
+
+### Row - Fun Facts{height=25%}
+```{python}
+#| content: valuebox
+#| title: "Number of Participants"
+dict(
+  icon = "person",
+  value = len(res.df)
+)
+```
+
+### Row - Fun Facts{height=25%}
+
+```{python}
+#| content: valuebox
+#| title: "Average Time"
+dict(
+  icon = "clock",
+  value = res.avg_time
+)
+```
+
+### Row - Fun Facts{height=25%}
+
+```{python}
+#| content: valuebox
+#| title: "Number of Countries in the Final"
+dict(
+  icon="globe",
+  value = res.n_countries
+)
+```
+
+## Column {width=60%}
+```{python}
+show(res.df, columnDefs=[{"className": "dt-center", "targets": "_all"}])
+```
+
+# General Stats
+{{< include general_stats.qmd >}}

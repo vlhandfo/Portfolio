@@ -88,7 +88,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "OBS: I’m a work in progess.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTravel Board\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "OBS: I’m a work in progess.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTravel Board\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -200,7 +200,7 @@
     "href": "projects/dashboard/main.html#basic-travel-functionality",
     "title": "Travel Board",
     "section": "Basic Travel Functionality",
-    "text": "Basic Travel Functionality\nThis is an example of using the API from Entur to generate three routes from Lillestrøm stasjon to Forskningsparken. For this sample, I have simply printed out the formatted GraphQL query used and the formatted result from the response.\n\nfrom dashboard import main\nfrom pathlib import Path\n\nargs = lambda: None\nargs.URL = \"https://api.entur.io/journey-planner/v3/graphql\"\nargs.DIR = Path(\"\")\nargs.TEMPLATE_DIR = Path(\"query_templates/\")\n\nassert args.DIR.exists(), \"No data directory found\"\nassert args.TEMPLATE_DIR.exists(), \"No template directory found\"\n\nmain(args)\n\nFrom Lillestrøm stasjon to Forskningsparken:\n============================================\nQUERY:\n{\n  trip(\n    from: {\n      place:\"NSR:StopPlace:62339\"\n            name:\"Lillestrøm stasjon, Lillestrøm\" \n    }\n    to: {\n      place:\"NSR:StopPlace:59600\"\n      name:\"Forskningsparken, Oslo\"\n    }\n    numTripPatterns: 3\n    dateTime: \"2024-08-27T16:38:33.312458+02:00\"\n    walkSpeed: 1.3\n    arriveBy: false\n  )\n  {\n    tripPatterns {\n      expectedStartTime\n      duration\n      walkDistance\n      legs {\n        mode\n        distance\n        line {\n          id\n          publicCode\n        }\n      }\n    }\n  }\n} \n\nRESULT:\nTrip 1:\nLeave by: 2024-08-27 16:39:24+02:00\nDuration: 1502\nWalking: 369.76\nLegs: [\n    Mode: rail, Line: RE10, \n    Mode: foot, \n    Mode: metro, Line: 5]\n\nTrip 2:\nLeave by: 2024-08-27 16:47:51+02:00\nDuration: 1612\nWalking: 352.84\nLegs: [\n    Mode: rail, Line: R14, \n    Mode: foot, \n    Mode: metro, Line: 5]\n\nTrip 3:\nLeave by: 2024-08-27 16:56:00+02:00\nDuration: 1680\nWalking: 352.84\nLegs: [\n    Mode: rail, Line: R12, \n    Mode: foot, \n    Mode: metro, Line: 4]"
+    "text": "Basic Travel Functionality\nThis is an example of using the API from Entur to generate three routes from Lillestrøm stasjon to Forskningsparken. For this sample, I have simply printed out the formatted GraphQL query used and the formatted result from the response.\n\nfrom dashboard import main\nfrom pathlib import Path\n\nargs = lambda: None\nargs.URL = \"https://api.entur.io/journey-planner/v3/graphql\"\nargs.DIR = Path(\"\")\nargs.TEMPLATE_DIR = Path(\"query_templates/\")\n\nassert args.DIR.exists(), \"No data directory found\"\nassert args.TEMPLATE_DIR.exists(), \"No template directory found\"\n\nmain(args)\n\nFrom Lillestrøm stasjon to Forskningsparken:\n============================================\nQUERY:\n{\n  trip(\n    from: {\n      place:\"NSR:StopPlace:62339\"\n            name:\"Lillestrøm stasjon, Lillestrøm\" \n    }\n    to: {\n      place:\"NSR:StopPlace:59600\"\n      name:\"Forskningsparken, Oslo\"\n    }\n    numTripPatterns: 3\n    dateTime: \"2024-09-30T09:46:53.500779+02:00\"\n    walkSpeed: 1.3\n    arriveBy: false\n  )\n  {\n    tripPatterns {\n      expectedStartTime\n      duration\n      walkDistance\n      legs {\n        mode\n        distance\n        line {\n          id\n          publicCode\n        }\n      }\n    }\n  }\n} \n\nRESULT:\nTrip 1:\nLeave by: 2024-09-30 09:47:51+02:00\nDuration: 1578\nWalking: 352.84\nLegs: [\n    Mode: rail, Line: R14, \n    Mode: foot, \n    Mode: metro, Line: 5]\n\nTrip 2:\nLeave by: 2024-09-30 09:56:00+02:00\nDuration: 1680\nWalking: 352.84\nLegs: [\n    Mode: rail, Line: R12, \n    Mode: foot, \n    Mode: metro, Line: 4]\n\nTrip 3:\nLeave by: 2024-09-30 10:06:00+02:00\nDuration: 1620\nWalking: 352.84\nLegs: [\n    Mode: rail, Line: R13, \n    Mode: foot, \n    Mode: metro, Line: 5]"
   },
   {
     "objectID": "projects/dashboard/main.html#interactive-version-incomplete",
@@ -208,5 +208,40 @@
     "title": "Travel Board",
     "section": "Interactive Version (Incomplete)",
     "text": "Interactive Version (Incomplete)\n\nDeparture:  Choose here Lillestrøm stasjon Oslo S Forskningsparken  Destination:   Choose here Lillestrøm stasjon Oslo S Forskningsparken  Submit"
+  },
+  {
+    "objectID": "projects/wjpc/dashboard/dashboard.html",
+    "href": "projects/wjpc/dashboard/dashboard.html",
+    "title": "World Jigsaw Puzzle Championships 2024 Results",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nimport pandas as pd\nfrom itables import show\n\nfrom result_stats import ResultStats\n\ndf = pd.read_csv(\"data/wjpc_2024_individual_final.csv\", \n                 index_col=0\n                )\n\ndf = df.rename(columns={\"#\": \"Place\"})\ndf = df.set_index('Place')\ndf = df[['Name', 'Time', 'Country', 'Origin']]\nres = ResultStats(df)\n\n\n\n\n\n\ndict(\n  icon = \"person\",\n  value = len(res.df)\n)\n\n{'icon': 'person', 'value': 180}\n\n\n\n\n\n\ndict(\n  icon = \"clock\",\n  value = res.avg_time\n)\n\n{'icon': 'clock', 'value': '00:56:08'}\n\n\n\n\n\n\ndict(\n  icon=\"globe\",\n  value = res.n_countries\n)\n\n{'icon': 'globe', 'value': 49}\n\n\n\n\n\n\n\nshow(res.df, columnDefs=[{\"className\": \"dt-center\", \"targets\": \"_all\"}])\n\n\n\n    \n      \n      Name\n      Time\n      Country\n      Origin\n    \n    \n      Place\n      \n      \n      \n      \n    \n  \n\n\n\n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n\n\nLoading ITables v2.2.1 from the internet...\n(need help?)"
+  },
+  {
+    "objectID": "projects/wjpc/dashboard/dashboard.html#column---overview",
+    "href": "projects/wjpc/dashboard/dashboard.html#column---overview",
+    "title": "World Jigsaw Puzzle Championships 2024 Results",
+    "section": "Column - Overview",
+    "text": "Column - Overview\n\nRow - Fun Facts\n\ndict(\n  icon = \"person\",\n  value = len(res.df)\n)\n\n{'icon': 'person', 'value': 180}\n\n\n\n\nRow - Fun Facts\n\ndict(\n  icon = \"clock\",\n  value = res.avg_time\n)\n\n{'icon': 'clock', 'value': '00:56:08'}\n\n\n\n\nRow - Fun Facts\n\ndict(\n  icon=\"globe\",\n  value = res.n_countries\n)\n\n{'icon': 'globe', 'value': 49}"
+  },
+  {
+    "objectID": "projects/wjpc/dashboard/dashboard.html#column",
+    "href": "projects/wjpc/dashboard/dashboard.html#column",
+    "title": "World Jigsaw Puzzle Championships 2024 Results",
+    "section": "Column",
+    "text": "Column\n\nshow(res.df, columnDefs=[{\"className\": \"dt-center\", \"targets\": \"_all\"}])\n\n\n\n    \n      \n      Name\n      Time\n      Country\n      Origin\n    \n    \n      Place\n      \n      \n      \n      \n    \n  \n\n\n\n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n\n\nLoading ITables v2.2.1 from the internet...\n(need help?)"
+  },
+  {
+    "objectID": "projects/wjpc/dashboard/dashboard.html#column---participants-by-country",
+    "href": "projects/wjpc/dashboard/dashboard.html#column---participants-by-country",
+    "title": "World Jigsaw Puzzle Championships 2024 Results",
+    "section": "Column - Participants by Country",
+    "text": "Column - Participants by Country\n\nn_participants = res.df[\"Country\"].value_counts().sort_values(ascending=True)\nn_participants.plot(kind=\"barh\", figsize=(3,9),\n        color=res.get_color_gradient(len(n_participants)),\n        title='Number of Participants by Country', \n        xlabel='Number of Participants')\nplt.show()"
+  },
+  {
+    "objectID": "projects/wjpc/dashboard/dashboard.html#column-1",
+    "href": "projects/wjpc/dashboard/dashboard.html#column-1",
+    "title": "World Jigsaw Puzzle Championships 2024 Results",
+    "section": "Column",
+    "text": "Column\n\nRow - Top N Finishers by Country\n\n\nn_participants = res.df[:10][\"Country\"].value_counts().sort_values(ascending=True)\nn_participants.plot(kind=\"pie\", figsize=(3,6),\n        title='Number of Participants by Country in the Top 10', ylabel=\"\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nn_participants = res.df[:25][\"Country\"].value_counts().sort_values(ascending=True)\nn_participants.plot(kind=\"pie\", figsize=(3,6),\n        title='Number of Participants by Country in the Top 25', ylabel=\"\", startangle=135)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nn_participants = res.df[:50][\"Country\"].value_counts().sort_values(ascending=True)\nn_participants.plot(kind=\"pie\", figsize=(3,6),\n        title='Number of Participants by Country in the Top 50', ylabel=\"\", startangle=135)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nRow\n\ndict(\n  icon=\"clock\",\n  value = res.get_faster_than_1_hr()\n)\n\n{'icon': 'clock', 'value': 113}"
   }
 ]
