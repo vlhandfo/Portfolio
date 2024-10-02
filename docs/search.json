@@ -256,6 +256,6 @@
     "href": "projects/wjpc/main.html",
     "title": "World Jigsaw Puzzle Championship Results",
     "section": "",
-    "text": "Homepage of the dashboard"
+    "text": "The World Jigsaw Puzzle Championships is an annual international speed puzzling competition where individuals, pairs, and teams race to complete puzzles as fast as possible.\nRead more about it here\n\n\n\nHomepage of the dashboard\n\n\nFor this hobby project, I retrieved the results from the World Jigsaw Puzzle Federation’s (WJPF) website and visualized it using a quarto dashboard."
   }
 ]
