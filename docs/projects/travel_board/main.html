@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.15">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exploratory Data Analysis: Surviving the Titanic – Victoria Handford</title>
+<title>Travel Board – Victoria Handford</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-43e429913127d57dcc71ffbe9670d040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,9 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -143,6 +140,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/vlhandfo"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -161,21 +165,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lets-look-at-the-dataset" id="toc-lets-look-at-the-dataset" class="nav-link active" data-scroll-target="#lets-look-at-the-dataset">Let’s look at the dataset</a>
-  <ul class="collapse">
-  <li><a href="#distribution-and-variance-of-the-features" id="toc-distribution-and-variance-of-the-features" class="nav-link" data-scroll-target="#distribution-and-variance-of-the-features">Distribution and variance of the features</a>
-  <ul class="collapse">
-  <li><a href="#survival" id="toc-survival" class="nav-link" data-scroll-target="#survival">Survival</a></li>
-  <li><a href="#passenger-class" id="toc-passenger-class" class="nav-link" data-scroll-target="#passenger-class">Passenger Class</a></li>
-  <li><a href="#sex" id="toc-sex" class="nav-link" data-scroll-target="#sex">Sex</a></li>
-  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age">Age</a></li>
-  <li><a href="#sibling-andor-spouses-aboard" id="toc-sibling-andor-spouses-aboard" class="nav-link" data-scroll-target="#sibling-andor-spouses-aboard">Sibling and/or Spouses Aboard</a></li>
-  <li><a href="#parents-andor-children-aboard" id="toc-parents-andor-children-aboard" class="nav-link" data-scroll-target="#parents-andor-children-aboard">Parents and/or Children Aboard</a></li>
-  <li><a href="#fare" id="toc-fare" class="nav-link" data-scroll-target="#fare">Fare</a></li>
-  <li><a href="#port-of-embarkment" id="toc-port-of-embarkment" class="nav-link" data-scroll-target="#port-of-embarkment">Port of Embarkment</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#basic-travel-functionality" id="toc-basic-travel-functionality" class="nav-link active" data-scroll-target="#basic-travel-functionality">Basic Travel Functionality</a></li>
+  <li><a href="#interactive-version-incomplete" id="toc-interactive-version-incomplete" class="nav-link" data-scroll-target="#interactive-version-incomplete">Interactive Version (Incomplete)</a></li>
   </ul>
 </nav>
     </div>
@@ -184,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploratory Data Analysis: Surviving the Titanic</h1>
+<h1 class="title">Travel Board</h1>
 </div>
 
 
@@ -201,283 +192,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Starting point: <a href="https://makeschool.org/mediabook/oa/tutorials/titanic-dataset-tutorial-an-intro-to-data-analysis-and-statistics-n40/">Make School Tutorial</a></p>
-<p>Data set: <a href="https://www.kaggle.com/c/titanic/data">Titanic - Machine Learning from Disaster</a></p>
-<!--TODO: add notes from EDA-titanic.ipynb-->
-<section id="lets-look-at-the-dataset" class="level1">
-<h1>Let’s look at the dataset</h1>
-<div id="3778ff3f" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/titanic.csv"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df.info()</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    int64  
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.7+ KB</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Ticket</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-<th data-quarto-table-cell-role="th">Cabin</th>
-<th data-quarto-table-cell-role="th">Embarked</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>0</td>
-<td>3</td>
-<td>Braund, Mr. Owen Harris</td>
-<td>male</td>
-<td>22.0</td>
-<td>1</td>
-<td>0</td>
-<td>A/5 21171</td>
-<td>7.25</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>There are 891 entries in the data set which include information about the following features:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 48%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Definition</th>
-<th>Values</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>PassengerID</code></td>
-<td>A unique number for each passerenger</td>
-<td>int: [1 : 892]</td>
-</tr>
-<tr class="even">
-<td><code>Survived</code></td>
-<td>Whether or not the passenger survived</td>
-<td>int: [0, 1]<br>0 = no<br> 1 = yes</td>
-</tr>
-<tr class="odd">
-<td><code>Pclass</code></td>
-<td>The ticket class the passenger had</td>
-<td>int: [1, 2, 3]<br>1 = 1st class <br>2 = 2nd class<br>3 = 3rd class</td>
-</tr>
-<tr class="even">
-<td><code>Name</code></td>
-<td>The name of the passenger</td>
-<td>string: Any</td>
-</tr>
-<tr class="odd">
-<td><code>Sex</code></td>
-<td>The passengers biological sex</td>
-<td>string: [“male”, “female”]</td>
-</tr>
-<tr class="even">
-<td><code>Age</code>¹</td>
-<td>How old the passenger was</td>
-<td>float</td>
-</tr>
-<tr class="odd">
-<td><code>SibSp</code></td>
-<td>The number of siblings and/or spouses aboard</td>
-<td>int</td>
-</tr>
-<tr class="even">
-<td><code>Parch</code>²</td>
-<td>The number of parents and/or children aboard</td>
-<td>int</td>
-</tr>
-<tr class="odd">
-<td><code>Ticket</code></td>
-<td>The ticket number</td>
-<td>string: Any</td>
-</tr>
-<tr class="even">
-<td><code>Fare</code></td>
-<td>How much the passenger paid for the ticket (£)</td>
-<td>float</td>
-</tr>
-<tr class="odd">
-<td><code>Cabin</code></td>
-<td>The passenger’s cabin number</td>
-<td>string | NaN</td>
-</tr>
-<tr class="even">
-<td><code>Embarked</code></td>
-<td>The port of embarkment</td>
-<td>string: [“C”, “Q”, “S”]<br>C = Cherbourg<br>Q = Queenstown<br>S = Southampton</td>
-</tr>
-</tbody>
-</table>
-<p>¹ Age is represented as a float and can be less than 1 if the passenger was a baby.<br>
-² Some children travelled only with a nanny, so the value of <code>Parch</code> can be 0.</p>
+<p>The base of a personal dashboard assistant with information about travel</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Not all entries are 100 percent complete
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>While there are 891 entries in the dataset, there are only 712 entries that have values for every feature, excluding <code>Cabin</code>. 177 entries are missing <code>Age</code> and an additional two are missing <code>Embarked</code>.</p>
+<p>This website is currently static, and I have not set up interactivity yet. You can find the complete source code on my github <a href="https://github.com/vlhandfo/portfolio/tree/main/projects/dashboard">here</a>.</p>
 </div>
 </div>
-<section id="distribution-and-variance-of-the-features" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-and-variance-of-the-features">Distribution and variance of the features</h2>
-<div id="ac3ce9db" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(df)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_feature_values():</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<!-- ![bus-icon](/images/public-transit.svg) -->
+<p><img src="../../images/public-transit.svg" alt="bus-icon" class="center"></p>
+<section id="basic-travel-functionality" class="level2">
+<h2 class="anchored" data-anchor-id="basic-travel-functionality">Basic Travel Functionality</h2>
+<p>This is an example of using the API from Entur to generate three routes from Lillestrøm stasjon to Forskningsparken. For this sample, I have simply printed out the formatted GraphQL query used and the formatted result from the response.</p>
+<div id="19b3f56c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dashboard <span class="im">import</span> main</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> <span class="kw">lambda</span>: <span class="va">None</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>args.URL <span class="op">=</span> <span class="st">"https://api.entur.io/journey-planner/v3/graphql"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>args.DIR <span class="op">=</span> Path(<span class="st">""</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>args.TEMPLATE_DIR <span class="op">=</span> Path(<span class="st">"query_templates/"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> args.DIR.exists(), <span class="st">"No data directory found"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> args.TEMPLATE_DIR.exists(), <span class="st">"No template directory found"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>main(args)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>From Lillestrøm stasjon to Forskningsparken:
+============================================
+QUERY:
+{
+  trip(
+    from: {
+      place:"NSR:StopPlace:62339"
+            name:"Lillestrøm stasjon, Lillestrøm" 
+    }
+    to: {
+      place:"NSR:StopPlace:59600"
+      name:"Forskningsparken, Oslo"
+    }
+    numTripPatterns: 3
+    dateTime: "2024-10-02T18:37:49.069154+02:00"
+    walkSpeed: 1.3
+    arriveBy: false
+  )
+  {
+    tripPatterns {
+      expectedStartTime
+      duration
+      walkDistance
+      legs {
+        mode
+        distance
+        line {
+          id
+          publicCode
+        }
+      }
+    }
+  }
+} 
+
+RESULT:
+Trip 1:
+Leave by: 2024-10-02 18:46:47+02:00
+Duration: 1807
+Walking: 352.84
+Legs: [
+    Mode: rail, Line: R14, 
+    Mode: foot, 
+    Mode: metro, Line: 5]
+
+Trip 2:
+Leave by: 2024-10-02 18:56:00+02:00
+Duration: 1680
+Walking: 352.84
+Legs: [
+    Mode: rail, Line: R12, 
+    Mode: foot, 
+    Mode: metro, Line: 4]
+
+Trip 3:
+Leave by: 2024-10-02 19:06:00+02:00
+Duration: 1620
+Walking: 352.84
+Legs: [
+    Mode: rail, Line: R13, 
+    Mode: foot, 
+    Mode: metro, Line: 5]
+
+</code></pre>
 </div>
-<section id="survival" class="level3">
-<h3 class="anchored" data-anchor-id="survival">Survival</h3>
-<div id="a86a1477" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set base values</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">"No"</span>, <span class="st">"Yes"</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"Survived"</span>].value_counts()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert values to percentages</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y <span class="op">/</span> N</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> plt.bar(<span class="bu">range</span>(<span class="bu">len</span>(x)), y, color<span class="op">=</span>[<span class="st">"tab:blue"</span>, <span class="st">"tab:orange"</span>])</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.xticks(<span class="bu">range</span>(<span class="bu">len</span>(x)), x)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.bar_label(g, fmt<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.75</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Survived?"</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="main_files/figure-html/cell-4-output-1.png" width="571" height="424" class="figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
-<section id="passenger-class" class="level3">
-<h3 class="anchored" data-anchor-id="passenger-class">Passenger Class</h3>
-<div id="cd4a1348" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vals  <span class="op">=</span> [(x, y) <span class="cf">for</span> x, y <span class="kw">in</span> df[<span class="st">"Pclass"</span>].value_counts().items()]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vals.sort(key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">0</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [elem[<span class="dv">0</span>] <span class="cf">for</span> elem <span class="kw">in</span> vals]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [elem[<span class="dv">1</span>]<span class="op">/</span>N <span class="cf">for</span> elem <span class="kw">in</span> vals]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> plt.bar(x, y, color<span class="op">=</span>[<span class="st">"tab:blue"</span>, <span class="st">"tab:orange"</span>, <span class="st">"tab:green"</span>])</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(x)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.bar_label(g, fmt<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.75</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Passenger Class"</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="main_files/figure-html/cell-5-output-1.png" width="571" height="424" class="figure-img"></p>
-</figure>
+<section id="interactive-version-incomplete" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-version-incomplete">Interactive Version (Incomplete)</h2>
+<div class="grid-container">
+<p><label for="depature">Departure:</label> <select name="departure" id="departure"> <option value="" selected="" disabled="" hidden="">Choose here</option> <option value="Lillestrøm stasjon">Lillestrøm stasjon</option> <option value="Oslo S">Oslo S</option> <option value="Forskningsparken">Forskningsparken</option> </select> <label for="destination">Destination: </label> <select name="destination" id="destination"> <option value="" selected="" disabled="" hidden="">Choose here</option> <option value="Lillestrøm stasjon">Lillestrøm stasjon</option> <option value="Oslo S">Oslo S</option> <option value="Forskningsparken">Forskningsparken</option> </select> <button type="button" onclick="">Submit</button></p>
 </div>
-</div>
-</div>
-</section>
-<section id="sex" class="level3">
-<h3 class="anchored" data-anchor-id="sex">Sex</h3>
-</section>
-<section id="age" class="level3">
-<h3 class="anchored" data-anchor-id="age">Age</h3>
-</section>
-<section id="sibling-andor-spouses-aboard" class="level3">
-<h3 class="anchored" data-anchor-id="sibling-andor-spouses-aboard">Sibling and/or Spouses Aboard</h3>
-</section>
-<section id="parents-andor-children-aboard" class="level3">
-<h3 class="anchored" data-anchor-id="parents-andor-children-aboard">Parents and/or Children Aboard</h3>
-</section>
-<section id="fare" class="level3">
-<h3 class="anchored" data-anchor-id="fare">Fare</h3>
-</section>
-<section id="port-of-embarkment" class="level3">
-<h3 class="anchored" data-anchor-id="port-of-embarkment">Port of Embarkment</h3>
-</section>
-</section>
-</section>
-<section id="questions" class="level1">
-<h1>Questions</h1>
-<ul>
-<li>Which features most influence the survival rate?
-<ul>
-<li>Women and children first hypothesis?</li>
-<li>class, age or gender?</li>
-</ul></li>
-<li>Port of departure have anything to do?</li>
-<li>how much you paid for your ticket</li>
-<li>cabin location?</li>
-<li>Did whole families die?</li>
-</ul>
 
 
 </section>

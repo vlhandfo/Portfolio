@@ -1,0 +1,11 @@
+--- 
+title: "World Jigsaw Puzzle Championship Results"
+format: html
+---
+The World Jigsaw Puzzle Championships is an annual international speed puzzling competition where individuals, pairs, and teams race to complete puzzles as fast as possible.
+
+Read more about it [here](https://www.worldjigsawpuzzle.org/)
+
+![Homepage of the dashboard](images/wjpc-dash.png)
+
+For this hobby project, I retrieved the results from the World Jigsaw Puzzle Federation's (WJPF) website and visualized it using a quarto dashboard. 

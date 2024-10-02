@@ -64,4 +64,57 @@ show(res.df, columnDefs=[{"className": "dt-center", "targets": "_all"}])
 ```
 
 # General Stats
-{{< include general_stats.qmd >}}
+
+## Column - Participants by Country {width=50%}
+
+```{python}
+n_participants = res.df["Country"].value_counts().sort_values(ascending=True)
+n_participants.plot(kind="barh", figsize=(3,9),
+		color=res.get_color_gradient(len(n_participants)),
+		title='Number of Participants by Country', 
+		xlabel='Number of Participants')
+plt.show()
+```
+
+## Column {width=50%}
+
+### Row - Top N Finishers by Country {height=50% .tabset}
+::: {.card title="Top 10"}
+
+```{python}
+n_participants = res.df[:10]["Country"].value_counts().sort_values(ascending=True)
+n_participants.plot(kind="pie", figsize=(3,6),
+		title='Number of Participants by Country in the Top 10', ylabel="")
+plt.show()
+```
+:::
+::: {.card title="Top 25"}
+
+```{python}
+n_participants = res.df[:25]["Country"].value_counts().sort_values(ascending=True)
+n_participants.plot(kind="pie", figsize=(3,6),
+		title='Number of Participants by Country in the Top 25', ylabel="", startangle=135)
+plt.show()
+```
+:::
+
+::: {.card title="Top 50"}
+
+```{python}
+n_participants = res.df[:50]["Country"].value_counts().sort_values(ascending=True)
+n_participants.plot(kind="pie", figsize=(3,6),
+		title='Number of Participants by Country in the Top 50', ylabel="", startangle=135)
+plt.show()
+```
+:::
+
+### Row  {height=50%}
+
+```{python}
+#| content: valuebox
+#| title: "Number of People who Finished under an Hour"
+dict(
+  icon="clock",
+  value = res.get_faster_than_1_hr()
+)
+```

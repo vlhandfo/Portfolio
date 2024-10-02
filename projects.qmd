@@ -2,12 +2,8 @@
 title: Projects
 listing: 
   contents: 
-    - "projects/dashboard/*.qmd"
-  sort: "data"
-#  categories: True
-#   include:
-#     category: Data Science
-
+    - "projects/annotator/main.qmd"
+    - "projects/travel_board/main.qmd"
+    - "projects/wjpc/main.qmd"
 ---
 
-![OBS: I'm a work in progess.](images/work-in-progress.gif)

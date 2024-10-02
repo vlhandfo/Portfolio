@@ -1,6 +1,5 @@
 --- 
 title: "Travel Board"
-category: Development
 format:
   html:
     code-fold: false

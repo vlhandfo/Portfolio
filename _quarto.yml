@@ -23,8 +23,9 @@ website:
         text: Projects
     right:
       - icon: github
-        href: https://github.com/vlhandfo
+        href: https://github.com/vlhandfo/portfolio
         aria-label: GitHub
+
 
 
 format:

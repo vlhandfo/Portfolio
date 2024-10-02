@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -39,15 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-1f27e7c69812f02b79e5c5b01a3d6a60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
-<script src="../../../site_libs/quarto-dashboard/stickythead.js"></script>
-<script src="../../../site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
-<script src="../../../site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
-<script src="../../../site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
-<script src="../../../site_libs/quarto-dashboard/web-components.js" type="module"></script>
-<script src="../../../site_libs/quarto-dashboard/components.js"></script>
-<link href="../../../site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
+<link href="../../../site_libs/bootstrap/bootstrap-43e429913127d57dcc71ffbe9670d040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,10 +106,10 @@ ul.task-list li input[type="checkbox"] {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent">
-
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -132,104 +158,123 @@ ul.task-list li input[type="checkbox"] {
   <div id="quarto-announcement" data-announcement-id="8d804391903f9120a47ad4c2276be932" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p>This website is still under construction.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
-<header id="quarto-dashboard-header">
-<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
-  <div class="navbar-container container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>    
-
-
-    <div class="navbar-brand-container">       
-
-      <div class="navbar-title">
-        <div class="navbar-title-text"><a href="#">World Jigsaw Puzzle Championships 2024 Results</a></div>
-        
-        
-      </div>
-    </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-home" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#home" data-scrolling="false" href="#home" aria-controls="home" aria-selected="true"><span class="nav-link-text">Home</span></a></li><li class="nav-item" role="presentation"><a id="tab-general-stats" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#general-stats" data-scrolling="false" href="#general-stats" aria-controls="general-stats" aria-selected="false"><span class="nav-link-text">General Stats</span></a></li></ul></div></div>
-</nav>
-</header></header>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#home" id="toc-home" class="nav-link active" data-scroll-target="#home">Home</a>
+  <ul class="collapse">
+  <li><a href="#column---overview" id="toc-column---overview" class="nav-link" data-scroll-target="#column---overview">Column - Overview</a>
+  <ul class="collapse">
+  <li><a href="#row---fun-facts" id="toc-row---fun-facts" class="nav-link" data-scroll-target="#row---fun-facts">Row - Fun Facts</a></li>
+  <li><a href="#row---fun-facts-1" id="toc-row---fun-facts-1" class="nav-link" data-scroll-target="#row---fun-facts-1">Row - Fun Facts</a></li>
+  <li><a href="#row---fun-facts-2" id="toc-row---fun-facts-2" class="nav-link" data-scroll-target="#row---fun-facts-2">Row - Fun Facts</a></li>
+  </ul></li>
+  <li><a href="#column" id="toc-column" class="nav-link" data-scroll-target="#column">Column</a></li>
+  </ul></li>
+  <li><a href="#general-stats" id="toc-general-stats" class="nav-link" data-scroll-target="#general-stats">General Stats</a>
+  <ul class="collapse">
+  <li><a href="#column---participants-by-country" id="toc-column---participants-by-country" class="nav-link" data-scroll-target="#column---participants-by-country">Column - Participants by Country</a></li>
+  <li><a href="#column-1" id="toc-column-1" class="nav-link" data-scroll-target="#column-1">Column</a>
+  <ul class="collapse">
+  <li><a href="#row---top-n-finishers-by-country" id="toc-row---top-n-finishers-by-country" class="nav-link" data-scroll-target="#row---top-n-finishers-by-country">Row - Top N Finishers by Country</a></li>
+  <li><a href="#row" id="toc-row" class="nav-link" data-scroll-target="#row">Row</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
+<main class="content" id="quarto-document-content">
 
-<iframe width="1200" height="700" src="docs/dashboard.html" class="bslib-grid-item html-fill-item">
-</iframe>
-<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div id="home" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="columns" aria-labelledby="tab-home">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 40fr) minmax(3em, 60fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 25fr) minmax(3em, 25fr) minmax(3em, 25fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="person" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">World Jigsaw Puzzle Championships 2024 Results</h1>
+</div>
 
-<i class="bi bi-person"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Number of Participants
-</p>
-<p class="value-box-value">
-180
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="clock" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-clock"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Average Time
-</p>
-<p class="value-box-value">
-00:56:08
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="globe" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-globe"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Number of Countries in the Final
-</p>
-<p class="value-box-value">
-49
-</p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="home" class="level1">
+<h1>Home</h1>
+<div id="22d2febe" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> show</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> result_stats <span class="im">import</span> ResultStats</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/wjpc_2024_individual_final.csv"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                 index_col<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">"#"</span>: <span class="st">"Place"</span>})</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.set_index(<span class="st">'Place'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[[<span class="st">'Name'</span>, <span class="st">'Time'</span>, <span class="st">'Country'</span>, <span class="st">'Origin'</span>]]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> ResultStats(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="column---overview" class="level2" width="40%">
+<h2 width="40%" class="anchored" data-anchor-id="column---overview">Column - Overview</h2>
+<section id="row---fun-facts" class="level3" height="25%">
+<h3 height="25%" class="anchored" data-anchor-id="row---fun-facts">Row - Fun Facts</h3>
+<div id="6e65154b" class="cell" content="valuebox" title="Number of Participants" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  icon <span class="op">=</span> <span class="st">"person"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> <span class="bu">len</span>(res.df)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>{'icon': 'person', 'value': 180}</code></pre>
 </div>
 </div>
+</section>
+<section id="row---fun-facts-1" class="level3" height="25%">
+<h3 height="25%" class="anchored" data-anchor-id="row---fun-facts-1">Row - Fun Facts</h3>
+<div id="b6963283" class="cell" content="valuebox" title="Average Time" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  icon <span class="op">=</span> <span class="st">"clock"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> res.avg_time</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>{'icon': 'clock', 'value': '00:56:08'}</code></pre>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<table id="itables_c6eb3bf9_1d3f_4946_a085_30d208b64885" class="display nowrap compact" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+</section>
+<section id="row---fun-facts-2" class="level3" height="25%">
+<h3 height="25%" class="anchored" data-anchor-id="row---fun-facts-2">Row - Fun Facts</h3>
+<div id="6b36c773" class="cell" content="valuebox" title="Number of Countries in the Final" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  icon<span class="op">=</span><span class="st">"globe"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> res.n_countries</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>{'icon': 'globe', 'value': 49}</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="column" class="level2" width="60%">
+<h2 width="60%" class="anchored" data-anchor-id="column">Column</h2>
+<div id="001332aa" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>show(res.df, columnDefs<span class="op">=</span>[{<span class="st">"className"</span>: <span class="st">"dt-center"</span>, <span class="st">"targets"</span>: <span class="st">"_all"</span>}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table id="itables_f4485668_85f3_48bb_a282_321377ade50e" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -247,7 +292,7 @@ Number of Countries in the Final
     </tr>
   </thead><tbody><tr>
 <td style="vertical-align:middle; text-align:left">
-<div style="float:left; margin-right: 10px;" class="html-fill-item html-fill-container">
+<div style="float:left; margin-right: 10px;">
 <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
         <path d="M100,400H500V357H100Z"></path>
@@ -306,7 +351,7 @@ Number of Countries in the Final
 </svg>
 </a>
 </div>
-<div class="html-fill-item html-fill-container">
+<div>
 Loading ITables v2.2.1 from the internet...
 (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</div></td>
 
@@ -317,12 +362,12 @@ Loading ITables v2.2.1 from the internet...
 <script type="module">
     import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.13/dt_bundle.js';
 
-    document.querySelectorAll("#itables_c6eb3bf9_1d3f_4946_a085_30d208b64885:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f4485668_85f3_48bb_a282_321377ade50e:not(.dataTable)").forEach(table => {
         // Define the table data
         const data = [[1, "Kristin Thuv", "00:37:58", "Norway", "Bod\u00f8 (Norge)"], [2, "Weronika Huptas", "00:39:12 ", "Poland", "Skarzysko Koscielne (Swietokrzyskie)"], [3, "Krystian Niedziela", "00:41:09 ", "Poland", "Sosnowiec (\u015al\u0105skie)"], [4, "Kelly Walter", "00:42:46 ", "USA", "Phoenix (Arizona)"], [5, "Katharina Reiner", "00:42:56 ", "Germany", "Hof (Bavaria)"], [6, "Merc\u00e9desz Arthofer", "00:43:53 ", "Hungary", "Sopron (Gy\u0151r-Moson-Sopron)"], [7, "Alejandro Clemente Le\u00f3n", "00:43:59 ", "Spain", "Barcelona"], [7, "Katrina Coleman", "00:43:59 ", "Australia", "Launceston (Tasmania)"], [9, "Netherlands Inge Sinot", "00:44:08 ", "The Netherlands", "Budel (Noord-Brabant)"], [10, "Tereza Kopt\u00edkov\u00e1", "00:44:30 ", "Czech Republic", "Prague (Cze)"], [11, "Chiara Dellantonio", "00:44:43 ", "Italy", "Munich (Bayern)"], [12, "Klara Wesselkamp", "00:45:10 ", "Germany", "Kopenhagen (Hovedstaden)"], [13, "Puzzlers Lina Ivanova", "00:45:13 ", "International Puzzlers", "Novosibirsk"], [14, "Melissa Townsend", "00:45:34 ", "Australia", "Gold Coast (Queensland)"], [15, "Cathy Roiter", "00:45:37 ", "USA", "Duvall (Washington)"], [16, "Erika Skarupsk\u0117", "00:45:42 ", "Lithuania", "Vilnius"], [17, "Andrea Peng", "00:46:19 ", "USA", "San Francisco (California)"], [18, "Puzzlers Taisiya Voronova", "00:46:26 ", "International Puzzlers", "Novosibirsk"], [19, "Emma Pan", "00:46:31 ", "USA", "West Roxbury (Massachusetts)"], [20, "Wiktor Kacprzak", "00:46:48 ", "Poland", "Krak\u00f3w (Polska)"], [21, "Mark\u00e9ta Freislerov\u00e1", "00:47:03 ", "Czech Republic", "Nupaky (Cze)"], [22, "Lauren Kautz", "00:47:29 ", "USA", "Minneapolis (Mn)"], [23, "Mia Oehmig", "00:47:31 ", "Germany", "M\u00fcnster (Nrw)"], [24, "Alice Rowe", "00:47:35 ", "USA", "Boulder (Co)"], [25, "Lisa Cruz", "00:47:47 ", "France", "Louisfert (Loire Atlantique)"], [26, "Vikt\u00f3ria Gy\u00fcre", "00:48:23 ", "Hungary", "Budapest"], [27, "Hanna Lehikoinen", "00:48:24 ", "Finland", "Helsinki (Uusimaa)"], [28, "Jeanne Roiter", "00:49:02 ", "USA", "Duvall (Washington)"], [29, "Hannah Farthing", "00:49:04 ", "Australia", "Warragul (Victoria)"], [30, "Tyra Weiring", "00:49:05 ", "Sweden", "V\u00e4ster\u00e5s (V\u00e4stmanland)"], [31, "Laura Aizpurua de Arteche", "00:49:10 ", "Spain", "Madrid"], [32, "Jana Ondrou\u0161kov\u00e1", "00:49:11 ", "Czech Republic", "Brno"], [33, "Emma Quirke", "00:49:26 ", "Ireland", "Killarney (Kerry)"], [34, "Brigitta Vinkler", "00:49:31 ", "Hungary", "Szendehely"], [35, "Emilia Korhonen", "00:49:38 ", "Finland", "Siilinj\u00e4rvi (Pohjois-Savo)"], [36, "Lara Friedrich", "00:49:43 ", "Germany", "Heidelberg (Baden-Wuerttemberg)"], [37, "Tobias Priemer", "00:49:45 ", "Sweden", "Dalby (Sk\u00e5ne)"], [38, "Netherlands Rowan Versteege", "00:50:12 ", "The Netherlands", "Delft (Zuid-Holland)"], [39, "Finn Parker", "00:50:28 ", "Australia", "Artarmon (Nsw)"], [40, "Puzzlers Mariia Matiushkina", "00:50:29 ", "International Puzzlers", "Novosibirsk"], [41, "Mari Black", "00:50:30 ", "USA", "Cambridge (Ma)"], [42, "Stefanie B\u00fchler", "00:50:41 ", "Germany", "Kerava (Uusimaa)"], [43, "Veronika Valt", "00:50:48 ", "Slovakia", "Bratislava"], [44, "Martyna Halter-Bogo\u0142\u0119bska", "00:51:07 ", "Poland", "Warsaw (Mazowieckie)"], [45, "Marion Cordier", "00:51:36 ", "France", "Pleumeur Bodou (Bretagne)"], [46, "Rhianna Eriksen", "00:51:53 ", "Australia", "Brisbane (Queensland)"], [47, "Kate\u0159ina Klinkov\u00e1", "00:51:56 ", "Czech Republic", "Praha (Czech Republic)"], [48, "Sofie Juel Andersen", "00:51:58 ", "Denmark", "Aarhus (None)"], [49, "Natalia Ptaszek", "00:52:00 ", "Poland", "Nowogard (Zachodniopomorskie)"], [50, "Maja Von Borstel", "00:52:18 ", "Germany", "Berlin"], [51, "Lydia Holmgren", "00:52:35 ", "Sweden", "G\u00e4vle (G\u00e4vleborg)"], [52, "Maria-Magdalena Robrecht", "00:52:47 ", "Germany", "Heidelberg (Baden-W\u00fcrttemberg)"], [53, "Maja Will\u00e9n", "00:52:50 ", "Sweden", "Link\u00f6ping (\u00d6sterg\u00f6tland)"], [54, "Iris Bakker", "00:52:51 ", "Denmark", "Aarhus (Midtjylland)"], [55, "Camille Auen", "00:53:07 ", "France", "Ungersheim (Alsace)"], [56, "Sarah Schuler", "00:53:08 ", "USA", "St. Paul (Minnesota)"], [57, "Gisela Arranz Toro", "00:53:13 ", "Spain", "Madrid"], [58, "Amanda Helin", "00:53:14 ", "Sweden", "Rolfstorp"], [59, "Ana Gil Luciano", "00:53:18 ", "Spain", "Madrid"], [60, "Lenka Henao Mi\u0161\u00edkov\u00e1", "00:53:19 ", "Slovakia", "Lisbon"], [61, "Laura D\u00f3ra B\u00edr\u00f3", "00:53:41 ", "Hungary", "Kecskem\u00e9t (B\u00e1cs-Kiskun)"], [62, "Yvonne Feucht", "00:53:55 ", "USA", "Burbank (California)"], [63, "Lisa-Marie Friedrich", "00:53:57 ", "Germany", "Ottenhoefen Im Schwarzwald (Baden-W\u00fcrttemberg)"], [64, "Agata Zasada", "00:54:00 ", "Poland", "Wroc\u0142aw (Dolno\u015bl\u0105skie)"], [65, "Kyle Kossin", "00:54:07 ", "USA", "Bountiful (Utah)"], [66, "Tiffany Medeiros", "00:54:08 ", "USA", "Lowell (Massachusetts)"], [67, "Lorenzo Dalla Valle", "00:54:12 ", "Italy", "Lozzo Atestino (Padova)"], [68, "Laura Pescher", "00:54:13 ", "Germany", "Gelsenkirchen (Nrw)"], [69, "Linda Jukmane", "00:54:26 ", "Latvia", "Riga (Latvia)"], [70, "Elisabeth Merendi", "00:54:28 ", "Estonia", "Viljandi (Viljandimaa)"], [71, "Anna Menges", "00:54:30 ", "Germany", "K\u00f6ln (North Rhine-Westfalia)"], [72, "Hrefna Gu\u00f0laugard\u00f3ttir", "00:54:32 ", "Iceland", "Reykjav\u00edk"], [73, "Netherlands Ellen Sinot", "00:54:33 ", "The Netherlands", "Waalre (Noord-Brabant)"], [74, "Mara Holler", "00:54:35 ", "Germany", "Cologne (Nordrhein-Westfalen)"], [75, "Netherlands Sandra Kunnen", "00:54:42 ", "The Netherlands", "Haarlem (Noord-Holland)"], [76, "Kateryna Babak", "00:54:44 ", "Ukraine", "Nuremberg (Bayern)"], [77, "Amke Eggers", "00:54:52 ", "Germany", "G\u00f6ttingen (Lower Saxony)"], [78, "Devon Donaldson", "00:54:54 ", "Canada", "Toronto (Ontario)"], [79, "Marta Lapina", "00:55:03 ", "Latvia", "Riga"], [80, "Julia Hildebrandt", "00:55:04 ", "Austria", "Berlin"], [81, "Nym L. Colpart", "00:55:13 ", "France", "Grenoble (France)"], [82, "Elena Kova\u010devi\u0107", "00:55:16 ", "Croatia", "Split (Splitsko Dalmatinska)"], [83, "Ole Marton \u00d8lberg", "00:55:39 ", "Norway", "Alversund (Vestland)"], [84, "Astrid Roesen Abildgaard", "00:55:43 ", "Denmark", "Copenhagen (Denmark)"], [85, "Agn\u00e8s Graulle", "00:55:46 ", "France", "Toulouse (Occitanie)"], [86, "Vanda Varga", "00:55:49 ", "Hungary", "Budapest"], [87, "Mariana Mendes", "00:55:54 ", "Portugal", "Quarteira (Faro)"], [88, "Magdalena Alberti", "00:56:05 ", "Germany", "M\u00fcnchen (Bayern)"], [89, "Marita Broberg", "00:56:14 ", "Australia", "O\u2019Halloran Hill (Sa)"], [90, "Antonia Albani", "00:56:20 ", "Germany", "L\u00fcneburg (Lower Saxony)"], [91, "Verena Klauser", "00:56:32 ", "Austria", "Vienna"], [92, "Merle Kleemann", "00:56:49 ", "Germany", "Aachen (Nrw)"], [93, "Emily Chandran", "00:56:50 ", "USA", "North Attleborough (Massachusetts)"], [94, "Claudia Carnicero Verde", "00:56:55 ", "Spain", "Soria"], [95, "\u0160\u00e1rka \u010cervinkov\u00e1", "00:57:17 ", "Czech Republic", "Hnatnice (\u010cesk\u00e1 Republika)"], [96, "Karolina Gajdova", "00:57:22 ", "Czech Republic", "Praha (Czechia)"], [97, "Alycia Krasny", "00:57:31 ", "USA", "San Diego (California)"], [98, "Francisco Jos\u00e9 Ruiz P\u00e9rez", "00:57:32 ", "Spain", "Cazalegas, Pueblo (Toledo)"], [99, "Daniel Krummenacker", "00:57:36 ", "Austria", "Traun (Ober\u00f6sterreich)"], [100, "Edmond Boutry", "00:58:03 ", "France", "Ch\u00e2tellerault (Poitou Charentes)"], [101, "Sophie Helg", "00:58:04 ", "Canada", "Montr\u00e9al (Qc)"], [102, "Dawne Rasmusson", "00:58:24 ", "USA", "Prior Lake (Minnesota)"], [103, "Colleen Dunne", "00:58:28 ", "USA", "Columbus (Oh)"], [104, "Min-Yee Deng", "00:58:39 ", "USA", "San Diego (Ca)"], [105, "S\u00e9milia Bayl\u00e9", "00:58:51 ", "France", "Toulouse (Haute-Garonne)"], [106, "Inka Koskinen", "00:58:53 ", "Finland", "Vantaa (Uusimaa)"], [107, "Oliwia Pracownik", "00:59:07 ", "Poland", "Lublin (Lubelskie)"], [108, "Alina Schering", "00:59:12 ", "Germany", "Selb (Bayern)"], [109, "Sarah Rowe", "00:59:16 ", "USA", "Williamstown (Massachusetts)"], [110, "Cornelia Spreitzer", "00:59:44 ", "Austria", "Wien"], [111, "Elodie Serrano", "00:59:52 ", "France", "Lyon (Rhone)"], [112, "Sjelle Hiebner", "00:59:53 ", "Germany", "Barcelona (Catalonia)"], [113, "Andrea Kyle", "00:59:54 ", "USA", "Saint Paul (Minnesota)"], [114, "Carsten Ruhnke", "01:00:07 ", "Germany", "Hannover (Lower Saxony)"], [115, "Emilia Liberman", "01:00:13 ", "Finland", "Espoo (Uusimaa)"], [116, "Zealand Jacqui Davis", "01:00:18 ", "New Zealand", "Auckland"], [117, "Tuule M\u00fc\u00fcrsepp", "01:00:19 ", "Estonia", "Antsla (V\u00f5rumaa)"], [118, "Beatrice Endler", "01:00:21 ", "USA", "Portland (Or)"], [119, "Nicola Thomas", "01:00:49 ", "United Kingdom", "Marlow (Buckinghamshire)"], [120, "Ellie Higgins", "01:00:55 ", "Australia", "Melbourne (Victoria)"], [121, "Olivia Waltz", "01:01:03 ", "Denmark", "Copenhagen (Hovedstaden)"], [121, "Sophie Neumann", "01:01:03 ", "Germany", "Jena (Th\u00fcringen)"], [123, "Anna Kazana", "01:01:04 ", "Poland", "Krak\u00f3w (Ma\u0142opolskie)"], [124, "Jana Katharina Ebner", "01:01:12 ", "Germany", "Heidelberg (Baden-W\u00fcrttemberg)"], [125, "Line Beate Svestad", "01:01:16 ", "Norway", "Oslo"], [126, "Rosa Frauenknecht", "01:01:33 ", "Finland", "Helsinki"], [127, "Patrick Inniger", "01:01:56 ", "Switzerland", "Thun (Bern)"], [128, "Jessica Mak", "01:02:02 ", "Malaysia", "Singapore"], [129, "Britney Ponchaut", "01:02:04 ", "Belgium", "Brakel ( / )"], [130, "Netherlands Nienke Schenkelaars", "01:02:20 ", "The Netherlands", "Delft (Zuid-Holland)"], [131, "Karen Kavett", "01:02:21 ", "USA", "Los Angeles (California)"], [132, "Roselien Lapon", "01:02:40 ", "Belgium", "Gent (Oost-Vlaanderen)"], [133, "C\u00e9cile Bruder", "01:02:41 ", "France", "Vertou (Loire Atlantique)"], [134, "Tammy McLeod", "01:03:16 ", "USA", "Los Angeles (California)"], [135, "Marc Fabel", "01:03:27 ", "Germany", "Hamburg"], [136, "Kotryna Kostiukait\u0117", "01:03:32 ", "Lithuania", "Vilnius"], [137, "Fenna Bontje", "01:03:44 ", "Belgium", "Eppegem (Vlaams Brabant)"], [138, "Sammy Brownlow", "01:04:49 ", "USA", "Westport (Ct)"], [139, "Andrea Engholm", "01:04:50 ", "Denmark", "K\u00f8benhavn"], [140, "Zealand Charlotte Kirby", "01:05:43 ", "New Zealand", "()"], [141, "Grace Tham", "01:05:46 ", "Malaysia", "Sydney (Nsw)"], [142, "Puzzlers Natalia Komarova", "01:05:51 ", "International Puzzlers", "Novosibirsk"], [143, "Netherlands Charlotte Reitsema", "01:05:56 ", "The Netherlands", "Sixthaselbach (Bavaria)"], [144, "Becca Taylor", "01:05:58 ", "USA", "Redwood City (California)"], [145, "Nora Vinkler", "01:06:18 ", "Hungary", "Budapest"], [146, "Fruzsina Wilheim", "01:07:11 ", "Hungary", "Attendorn (Nrw)"], [147, "Jimena Gordillo Uribe", "01:08:03 ", "Colombia", "Castellbisbal (Barcelona)"], [148, "Maria Teixeira", "01:08:04 ", "Portugal", "Braga"], [149, "Sofia Guerrero Soriano", "01:08:16 ", "Mexico", "Maguncia (Rheinland-Pfalz)"], [150, "Smaranda Polojan", "01:08:32 ", "Romania", "Amsterdam (Noord-Holland)"], [151, "Ayse Dilara D\u00fc\u011fmeci", "01:08:40 ", "T\u00fcrkiye", "I\u0307stanbul"], [152, "Joyce Petry", "01:10:09 ", "Luxembourg", "Vianden"], [153, "Riikka Utriainen", "01:11:11 ", "Finland", "Helsinki (Uusimaa)"], [154, "Janette Perme", "01:11:33 ", "Slovenia", "Ljubljana (Central Slovenia)"], [155, "Elitsa Kerefeyska", "01:11:44 ", "Bulgaria", "Varna"], [156, "Katharina Pickar", "01:13:21 ", "Luxembourg", "Mamer"], [157, "Santos Mart\u00edn Kato", "01:13:53 ", "Japan", "Valladolid"], [158, "Mariya Lyapeva", "01:14:06 ", "Bulgaria", "Sofia"], [159, "Kirsty Williams", "01:14:49 ", "United Kingdom", "Newport (Gwent)"], [160, "Ieva Opmane", "01:14:53 ", "Latvia", "M\u0101rupe (Select State...)"], [161, "Dan Martin", "01:14:59 ", "Ireland", "London (England)"], [162, "Mathilde Patthey", "497 Pieces", "Chile", "Santiago"], [163, "Africa Jacques Scheepers", "484 Pieces", "South Africa", "Munich (Bavaria)"], [164, "Natalia Gatti", "483 Pieces", "Argentina", "Buenos Aires"], [165, "Vasso Kalaitzidou", "468 Pieces", "Greece", "Athens (Attica)"], [166, "Jana Dragan", "450 Pieces", "Slovenia", "Novo Mesto (Slovenia)"], [167, "Veronika Lenart", "446 Pieces", "Ukraine", "Uzhhorod (Transcarpathia)"], [168, "Iva Kijevcanin", "445 Pieces", "Serbia", "Belgrade (Serbia)"], [169, "Christie Sototuka", "443 Pieces", "Brazil", "S\u00e3o Paulo"], [170, "Zhenwei Gu", "435 Pieces", "China", "Shanghai"], [170, "Horacio Rodr\u00edguez Garc\u00eda", "435 Pieces", "Mexico", "San Luis Potos\u00ed"], [170, "Foteini Sotiriou", "435 Pieces", "Cyprus", "Larnaca"], [173, "Anna Artyukhova", "431 Pieces", "Cyprus", "Nicosia"], [174, "Ayel\u00e9n Galarza Rial", "424 Pieces", "Argentina", "CABA"], [175, "Lisbeth Sofia Hern\u00e1ndez Ruiz", "420 Pieces", "Guatemala", "Augsburg (Bavaria)"], [176, "Gabriela Wagner", "410 Pieces", "Romania", "Timisoara (Timis)"], [177, "Ramona Ackermann", "407 Pieces", "Switzerland", "Z\u00fcrich"], [178, "Maya Binetskaya Semiankova", "399 Pieces", "Belarus", "Madrid"], [179, "Paula Do Amaral Nogueira", "387 Pieces", "Brazil", "S\u00e3o Paulo"], [180, "Ag\u00fasta Dan \u00c1rnad\u00f3ttir", "372 Pieces", "Iceland", "Reykjavik"]];
 
         // Define the dt_args
-        let dt_args = {"columnDefs": [{"className": "dt-center", "targets": "_all"}], "autoWidth": false, "buttons": [], "dom": "fiBrtlp", "info": true, "keys": true, "language": {"info": "Showing _TOTAL_ entries"}, "lengthChange": false, "order": [], "ordering": true, "paging": false, "responsive": true, "searching": true, "warn_on_selected_rows_not_rendered": true};
+        let dt_args = {"columnDefs": [{"className": "dt-center", "targets": "_all"}], "layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_selected_rows_not_rendered": true};
         dt_args["data"] = data;
 
         
@@ -331,84 +376,96 @@ Loading ITables v2.2.1 from the internet...
 </script>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</section>
+</section>
+<section id="general-stats" class="level1">
+<h1>General Stats</h1>
+<section id="column---participants-by-country" class="level2" width="50%">
+<h2 width="50%" class="anchored" data-anchor-id="column---participants-by-country">Column - Participants by Country</h2>
+<div id="8ddb68e2" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n_participants <span class="op">=</span> res.df[<span class="st">"Country"</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n_participants.plot(kind<span class="op">=</span><span class="st">"barh"</span>, figsize<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">9</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>res.get_color_gradient(<span class="bu">len</span>(n_participants)),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Number of Participants by Country'</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        xlabel<span class="op">=</span><span class="st">'Number of Participants'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dashboard_files/figure-html/cell-7-output-1.png" width="440" height="745" class="figure-img"></p>
+</figure>
 </div>
 </div>
-</div><div id="general-stats" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="columns" aria-labelledby="tab-general-stats">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 50fr) minmax(3em, 50fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-7-output-1.png" class="quarto-dashboard-img-contain">
+</div>
+</section>
+<section id="column-1" class="level2" width="50%">
+<h2 width="50%" class="anchored" data-anchor-id="column-1">Column</h2>
+<section id="row---top-n-finishers-by-country" class="level3 tabset" height="50%">
+<h3 class="tabset anchored" height="50%" data-anchor-id="row---top-n-finishers-by-country">Row - Top N Finishers by Country</h3>
+<div class="card" title="Top 10">
+<div id="40512169" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n_participants <span class="op">=</span> res.df[:<span class="dv">10</span>][<span class="st">"Country"</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n_participants.plot(kind<span class="op">=</span><span class="st">"pie"</span>, figsize<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">6</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Number of Participants by Country in the Top 10'</span>, ylabel<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dashboard_files/figure-html/cell-8-output-1.png" width="405" height="262" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 50fr) minmax(3em, 50fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header bslib-navs-card-title"><div class="card-title"><span style="display: inline">
+</div>
+</div>
+<div class="card" title="Top 25">
+<div id="8465a5ba" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n_participants <span class="op">=</span> res.df[:<span class="dv">25</span>][<span class="st">"Country"</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>n_participants.plot(kind<span class="op">=</span><span class="st">"pie"</span>, figsize<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">6</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Number of Participants by Country in the Top 25'</span>, ylabel<span class="op">=</span><span class="st">""</span>, startangle<span class="op">=</span><span class="dv">135</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dashboard_files/figure-html/cell-9-output-1.png" width="419" height="262" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="card" title="Top 50">
+<div id="20b0be46" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>n_participants <span class="op">=</span> res.df[:<span class="dv">50</span>][<span class="st">"Country"</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>n_participants.plot(kind<span class="op">=</span><span class="st">"pie"</span>, figsize<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">6</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Number of Participants by Country in the Top 50'</span>, ylabel<span class="op">=</span><span class="st">""</span>, startangle<span class="op">=</span><span class="dv">135</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dashboard_files/figure-html/cell-10-output-1.png" width="405" height="262" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="row" class="level3" height="50%">
+<h3 height="50%" class="anchored" data-anchor-id="row">Row</h3>
+<div id="f9a24274" class="cell" content="valuebox" title="Number of People who Finished under an Hour" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  icon<span class="op">=</span><span class="st">"clock"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> res.get_faster_than_1_hr()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>{'icon': 'clock', 'value': 113}</code></pre>
+</div>
+</div>
 
-</span></div><ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-6"><li class="nav-item" role="presentation"><a href="#card-tabset-6-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Top 10" aria-selected="true" class="nav-link active">Top 10</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Top 25" aria-selected="false" class="nav-link">Top 25</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Top 50" aria-selected="false" class="nav-link">Top 50</a></li></ul></div>
 
+</section>
+</section>
+</section>
 
-
-<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-6"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-1"><div class="card-body html-fill-item html-fill-container" data-title="Top 10">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-8-output-1.png" class="quarto-dashboard-img-contain">
-</div>
-</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-2"><div class="card-body html-fill-item html-fill-container" data-title="Top 25">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-9-output-1.png" class="quarto-dashboard-img-contain">
-</div>
-</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-3"><div class="card-body html-fill-item html-fill-container" data-title="Top 50">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-10-output-1.png" class="quarto-dashboard-img-contain">
-</div>
-</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="clock" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-clock"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Number of People who Finished under an Hour
-</p>
-<p class="value-box-value">
-113
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -831,14 +888,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-<script type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (_event) {
-  if (window.bslib.Card) {
-    window.bslib.Card.initializeAllCards();
-  }
-}); 
-</script>
-  
 
 
 
