@@ -35,6 +35,7 @@ Methods:
 TODOs:
 - Make `on_submit` more robust to handle different outputs
 - Fix the keybinding for checkboxes in `__init__`, currently set to 5 bindings and done manually 
+- TODO: Add save state button and log
 """
 
 import json
@@ -61,11 +62,13 @@ class Annotator(Tk):
 		super().__init__()
 		self.title(title)
 		
+		df["working_index"] = [i for i in range(len(df))]
+  
 		if display_data is None:
 			display_data = df.columns
    
 		assert "text" in display_data, "Annotator requires 'text' column"
-  
+
 		self.df = df
 		self.output = output
   
@@ -191,9 +194,9 @@ class Annotator(Tk):
 		# TODO: Make this more robust to handle different outputs
 		res = {"text": self.labels["text"]["text"],
 			"languages": self.selected,
-			"original": df.iloc[self.current_idx]["languages"]}
+			"original": self.df.iloc[self.current_idx]["languages"]}
 
-		with open(args.output, "a") as f:
+		with open(self.output, "a") as f:
 			json.dump(res, f)
 			f.write("\n")
    
