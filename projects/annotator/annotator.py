@@ -49,7 +49,8 @@ class Annotator(Tk):
     annotator_font: tuple = ("Helvetica", 18, "")
     annotator_width: int = 50
     annotator_wraplength: int = 500
-    annotator_side_pad: int = 10
+    annotator_side_pad: int = 5
+    annotator_background: str = "gray70"
 
     def __init__(
         self,
@@ -62,6 +63,7 @@ class Annotator(Tk):
     ) -> None:
         super().__init__()
         self.title(title)
+        self.configure(background=self.annotator_background)
 
         df["working_index"] = [i for i in range(len(df))]
 
@@ -114,7 +116,10 @@ class Annotator(Tk):
                 variable=var,
                 command=lambda val=val: self.on_checkbox_click(val),
             )
-            checkbox.grid(row=input_row, column=i, sticky=W)
+            checkbox.grid(row=input_row, column=i, sticky=E)
+            checkbox.configure(
+                background=self.annotator_background, highlightthickness=0, bd=0
+            )
             checkboxes.append(checkbox)
         submit = Button(
             self,
@@ -123,6 +128,10 @@ class Annotator(Tk):
             width=self.annotator_width // 5,
         )
         submit.grid(row=input_row, column=len(self.values))
+        submit.configure()
+
+        # Add a buffer row between inputs and the edge of the window
+        self.grid_rowconfigure(input_row + 1, minsize=10)
 
         return checkboxes, submit
 
@@ -137,10 +146,31 @@ class Annotator(Tk):
         # Remove "text" for special formatting
         features = list(self.display_data.copy())
         features.remove("text")
+        features.remove("working_index")
+
+        # Setup working index label
+        label_key = Label(self, text="Working Index:")
+        label_key.grid(row=0, column=0)
+        label_key.configure(
+            background="gray85",
+            padx=self.annotator_side_pad,
+            pady=self.annotator_side_pad,
+        )
+        working_index = Label(self, text="")
+        working_index.grid(row=0, column=1, sticky=W)
+        working_index.configure(
+            background="gray85",
+            padx=self.annotator_side_pad,
+            pady=self.annotator_side_pad,
+        )
+        labels["working_index"] = working_index
+
+        # Add a buffer row between inputs and the edge of the window
+        self.grid_rowconfigure(1, minsize=10)
 
         # Setup Text Label
         main_label = Label(self, text="")
-        main_label.grid(row=0, column=0, columnspan=len(self.values) + 1)
+        main_label.grid(row=2, column=0, columnspan=len(self.values) + 1)
         main_label.configure(
             font=self.annotator_font,
             width=self.annotator_width,
@@ -152,18 +182,23 @@ class Annotator(Tk):
         labels["text"] = main_label
 
         # Setup up remaining metadata labels
+        _exisiting_n_rows = self.grid_size()[1]
         for i, feature in enumerate(features):
             label_key = Label(self, text=feature + ":")
-            label_key.grid(row=i + 1, column=0)
+            label_key.grid(row=i + _exisiting_n_rows, column=0)
+            label_key.configure(background=self.annotator_background)
 
             label_value = Label(self, text="")
-            label_value.grid(row=i + 1, column=1, columnspan=len(self.values))
+            label_value.grid(
+                row=i + _exisiting_n_rows, column=1, columnspan=len(self.values)
+            )
             label_value.configure(
                 font=self.annotator_font,
                 width=self.annotator_width,
                 wraplength=self.annotator_wraplength,
                 padx=self.annotator_side_pad,
                 pady=self.annotator_side_pad,
+                background=self.annotator_background,
             )
             labels[feature] = label_value
 
